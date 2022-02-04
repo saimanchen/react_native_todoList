@@ -1,15 +1,29 @@
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
+  containerGreen: {
     flex: 1,
-    backgroundColor: '#26263A',
+    width: '100%',
+    backgroundColor: '#30DD8D',
+  },
+  containerBlue: {
+    flex: 1,
+    width: '100%',
+    backgroundColor: '#5fbcbf',
+  },
+  container: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  paintContainer: {
+    paddingTop: 40,
+    width: 320,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
   itemContainer: {
-    // borderWidth: 1,
+    flexDirection: 'row',
     width: 320,
     alignItems: 'center',
     justifyContent: 'center',
@@ -18,6 +32,7 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
   },
   item: {
+    flexDirection: 'row',
     width: '100%',
     margin: 5,
     padding: 20,
@@ -31,20 +46,17 @@ export const globalStyles = StyleSheet.create({
     color: '#fff'
   },
   addTask: {
-    // borderWidth: 1,
-    paddingTop: 50,
     flexDirection: 'row',
     alignItems: 'baseline',
     marginBottom: 20,
   },
   input: {
-    // borderWidth: 1,
-    paddingLeft: 5,
+    paddingHorizontal: 25,
+    marginRight: 10,
     width: 270,
     color: '#fff',
   },
   addButton: {
-    // borderWidth: 1,
     paddingRight: 5,
     alignItems: 'flex-end',
     width: 30,
@@ -54,5 +66,5 @@ export const globalStyles = StyleSheet.create({
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
-  }
+  },
 }) 

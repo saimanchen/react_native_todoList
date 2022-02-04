@@ -1,39 +1,33 @@
-import { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, FlatList } from 'react-native';
+import { useContext } from 'react';
 import TodoList from './src/screens/TodoList';
 import Notes from './src/screens/Notes';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import { ThemeContext, ThemeProvider } from './src/context/ThemeContext';
 
 export default function App() {
-
-  const [tasks, setTasks] = useState([
-    { task: 'decide what kind of app to do', id: 1 },
-    { task: "let's do a todo app", id: 1 },
-    { task: 'start making it', id: 1 },
-    { task: 'make it better', id: 1 },
-    { task: 'finish it', id: 1 },
-  ]);
-  
   const Tab = createBottomTabNavigator();
 
+  const tabWithTheme = () => {
+    const { theme } = useContext(ThemeContext);
+    return <Tab screenProps={{ theme }}/>
+  }
+
   return (
-    <NavigationContainer>
+    <ThemeProvider>
+      <NavigationContainer>
         <Tab.Navigator
           screenOptions={{
-            style: {
-              borderTopColor: '#26263A',
-            },
-            tabBarActiveBackgroundColor: '#26263A',
-            tabBarInactiveBackgroundColor: '#32324C',
+            tabBarActiveBackgroundColor: '#bbb',
+            tabBarInactiveBackgroundColor: '#bbb',
             tabBarInactiveTintColor: '#26263A',
             tabBarActiveTintColor: '#fff',
+            tabBarShowLabel: false,
             tabBarStyle: {
               position: 'absolute',
-              borderTopColor: '#26263A',
-            },
-            
+              borderTopColor: '#bbb',
+            },           
             headerShown: false,
           }}
         >
@@ -46,7 +40,7 @@ export default function App() {
                   <Ionicons
                     name="list"
                     size={24}
-                    color={tabInfo.focused ? "#fff" : "'#26263A'"}
+                    color={tabInfo.focused ? '#fff' : '#ccc'}
                   />
                 );
               },
@@ -61,13 +55,15 @@ export default function App() {
                   <Ionicons
                     name="journal"
                     size={24}
-                    color={tabInfo.focused ? "#fff" : '#26263A'}
+                    color={tabInfo.focused ? '#fff' : '#aaa'}
                   />
                 );
               },
             }}
           />
         </Tab.Navigator>
-    </NavigationContainer>
+      </NavigationContainer>
+    </ThemeProvider>
+    
   );
 }

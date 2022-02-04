@@ -2,7 +2,7 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { globalStyles } from '../styles/globalStyles';
 
-const AddTask = ({ addHandler }) => {
+const AddItem = ({ addHandler }) => {
   const [text, setText] = useState('');
   const inputHandler = value => setText(value);
 
@@ -28,4 +28,4 @@ const AddTask = ({ addHandler }) => {
   );
 };
 
-export default AddTask;
+export default AddItem;
