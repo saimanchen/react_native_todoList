@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { View, FlatList, SafeAreaView, Alert, TouchableOpacity } from 'react-native'
+import { Header } from './Header';
 import AddItem from './AddItem';
 import ListItem from './ListItem';
 import { globalStyles } from '../styles/globalStyles';
@@ -8,6 +9,7 @@ import { Icon } from 'react-native-elements';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 // context
 import { ThemeContext } from '../context/ThemeContext';
+
 
 
 
@@ -90,6 +92,8 @@ const Home = () => {
 
   return (
     <SafeAreaView style={globalStyles[`container${theme}`]}>
+      {/* header - platform specific */}
+      {/* <Header /> */}
       <View style={globalStyles.container}>
         <View style={globalStyles.paintContainer}>
           <ToggleHandler />

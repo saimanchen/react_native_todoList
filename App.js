@@ -9,11 +9,6 @@ import { ThemeContext, ThemeProvider } from './src/context/ThemeContext';
 export default function App() {
   const Tab = createBottomTabNavigator();
 
-  const tabWithTheme = () => {
-    const { theme } = useContext(ThemeContext);
-    return <Tab screenProps={{ theme }}/>
-  }
-
   return (
     <ThemeProvider>
       <NavigationContainer>
