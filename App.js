@@ -1,10 +1,9 @@
-import { useContext } from 'react';
 import TodoList from './src/screens/TodoList';
 import Notes from './src/screens/Notes';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import { ThemeContext, ThemeProvider } from './src/context/ThemeContext';
+import { ThemeProvider } from './src/context/ThemeContext';
 
 export default function App() {
   const Tab = createBottomTabNavigator();

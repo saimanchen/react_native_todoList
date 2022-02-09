@@ -71,7 +71,7 @@ const Home = () => {
     }
   }
 
-  // 
+  // context toggle function
   const ToggleHandler = () => {
     const { toggleTheme } = useContext(ThemeContext);
     return (
